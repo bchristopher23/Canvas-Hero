@@ -848,26 +848,11 @@
         function update() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawAnimatedLines();
-            // setInterval(drawAnimatedLines,10);
         }
 
         // Calculate Distance Between 2 Points
         function lineDistance(x1, y1, x2, y2) {
             return Math.sqrt( Math.pow((x1-x2), 2) + Math.pow((y1-y2), 2) );
-        }
-
-        function getRandom(arr, n) {
-            var result = new Array(n),
-                len = arr.length,
-                taken = new Array(len);
-            if (n > len)
-                throw new RangeError("getRandom: more elements taken than available");
-            while (n--) {
-                var x = Math.floor(Math.random() * len);
-                result[n] = arr[x in taken ? taken[x] : x];
-                taken[x] = --len in taken ? taken[len] : len;
-            }
-            return result;
         }
 
     }
